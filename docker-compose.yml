@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  openroaded:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - DISPLAY=:0
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    depends_on:
+      - x11server
+
+  x11server:
+    image: x11vnc/desktop
+    environment:
+      - DISPLAY=:0
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+    ports:
+      - 6080:6080

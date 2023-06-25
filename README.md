@@ -20,6 +20,8 @@ sudo apt install git cmake g++ libopenscenegraph-dev qt5-default
 
 ```
 git clone --recurse-submodules https://github.com/fhwedel-hoe/OpenRoadEd.git
+git submodule init
+git submodule update
 mkdir OpenRoadEd/OpenRoadEd/build
 cd OpenRoadEd/OpenRoadEd/build
 cmake ..
